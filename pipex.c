@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:30:44 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/10/01 19:53:27 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:38:25 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int	main(int argc, char **argv, char **envp)
+int	pipex(int argc, char **argv, char **envp)
 {
 	int	pfd[2];
 	int	fd;
 	int	pid;
-
 
 	fd = open(argv[1], O_RDONLY);
 	dup2(fd, 0);
