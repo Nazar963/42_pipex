@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:30:44 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/10/04 15:38:25 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:06:49 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,43 @@
 
 int	pipex(int argc, char **argv, char **envp)
 {
-	int	pfd[2];
-	int	fd;
-	int	pid;
+	int	fd[2];
+	int	pid1;
+	int	pid2;
+	int	infd;
+	int	oufd;
 
-	fd = open(argv[1], O_RDONLY);
-	dup2(fd, 0);
-	if (argc > 5)
-		return (0);
-	if (pipe(pfd) == -1)
-	{
-		perror("pipe faild");
-		exit(1);
-	}
-	pid = fork();
-	if (pid < 0)
-	{
+	if (argc > 5 || argc < 5)
+		return (NULL);
+	infd = open(argv[1], O_RDONLY);
+	oufd = open(argv[4], O_RDWR, O_CREAT);
+	if (pipe(fd) == -1)
+		perror("Unable to pipe the situation!");
+	pid1 = fork();
+	if (pid1 < 0)
 		perror("Fork faild");
-		return (0);
-	}
-	if (pid == 0)
+	if (pid1 == 0)
 	{
-		execve(argv[1], argv[2], envp);
+		if (dup2(infd, 0) < 0)
+			return (0);
+		if (dup2(fd[1], 1) < 0)
+			return (0);
+		close(fd[0]);
+		// close(fd[1]);
+		close(infd);
+		// close(oufd);
+		execve();
+		exit(/*EXIT_FAILURE*/0);
 	}
-	waitpid(pid, NULL, 0);
-	return (0);
+	waitpid(pid1, NULL, 0);
+	if (dup2(oufd, 1) < 0)
+		return (0);
+	if (dup2(fd[0], 0) < 0)
+		return (0);
+		// close(fd[0]);
+		close(fd[1]);
+		// close(infd);
+		close(oufd);
+		execve();
+		exit(/*EXIT_FAILURE*/0);
 }
