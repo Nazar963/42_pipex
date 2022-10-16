@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 19:49:22 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/10/14 17:44:49 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:44:10 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	execute(char *exec_path, char **cmd, char **envp)
 {
-	execve(exec_path, cmd, envp)
+	execve(exec_path, cmd, envp);
 	perror("command not valid");
 }
 
-void	add_slash(char **new_path, char **cmd, char **envp, char **argv)
+void	add_slash(char **new_path, char **cmd, char **envp)
 {
 	int		i;
 	char	*exec_path;
@@ -49,7 +49,7 @@ void	something_1(char **argv, char **envp, int kind)
 		i++;
 	new_path = ft_split(envp[i], ':');
 	cmd = ft_split(argv[kind], ' ');
-	add_slash(new_path, cmd, envp, argv);
+	add_slash(new_path, cmd, envp);
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -59,10 +59,10 @@ int	main(int argc, char **argv, char **envp)
 	int	input_file;
 	int	output_file;
 
-	input_file = open(argv[1], O_RDONLY);
-	output_file = open (argv[4], O_RDWR, O_CREAT, 0777);
 	if (argc != 5)
 		handler(3);
+	input_file = open(argv[1], O_RDONLY);
+	output_file = open (argv[4], O_RDWR, O_CREAT, O_TRUNC, 0777);
 	if (pipe(fd) == -1)
 		handler(2);
 	pid1 = fork();

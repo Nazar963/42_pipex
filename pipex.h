@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 00:26:19 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/10/13 20:50:39 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/10/15 20:13:26 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 void	handler(int case_num);
 int		main(int argc, char **argv, char **envp);
+void	execute(char *exec_path, char **cmd, char **envp);
+void	add_slash(char **new_path, char **cmd, char **envp);
 void	something_1(char **argv, char **envp, int kind);
 
 #endif
