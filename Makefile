@@ -6,15 +6,15 @@
 #    By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 18:12:50 by naal-jen          #+#    #+#              #
-#    Updated: 2022/10/15 21:00:50 by naal-jen         ###   ########.fr        #
+#    Updated: 2022/10/21 21:20:16 by naal-jen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = pipex
-CFILES = new_pipex.c handle_error.c
-OFILES = new_pipex.o handle_error.o
+CFILES = new_pipex.c handle_error.c utils.c
+OFILES = new_pipex.o handle_error.o utils.o
 
 all: libft.a pipex.a $(NAME)
 
@@ -30,7 +30,7 @@ $(NAME): $(OFILES)
 	$(CC) $(OFILES) libft/libft.a pipex.a -o $(NAME)
 
 $(OFILES): $(CFILES)
-	$(CC) -c $(CFLAGS) $(CFILES)
+	$(CC) $(CFLAGS) $(CFILES)
 
 clean:
 	rm *.o
@@ -43,3 +43,4 @@ fclean: clean
 
 re: fclean all
 
+.PHONY: all clean fclean re

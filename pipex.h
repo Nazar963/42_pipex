@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 00:26:19 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/10/15 20:13:26 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:16:05 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@
 
 void	handler(int case_num);
 int		main(int argc, char **argv, char **envp);
-void	execute(char *exec_path, char **cmd, char **envp);
 void	add_slash(char **new_path, char **cmd, char **envp);
-void	something_1(char **argv, char **envp, int kind);
+void	handle_path(char **argv, char **envp, int kind);
+void	free_ptr(char **pointer);
+void	error_cmd(char *cmd);
+int		open_files(char *file, int type);
+void	error_file(char *file);
+void	execute_cmd(char *exec_path, char **cmd, char **envp);
+void	child(int input_file, int output_file, char **argv, char **envp);
 
 #endif
