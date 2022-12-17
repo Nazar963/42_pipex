@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:58:14 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/04 15:04:39 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:14:24 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,25 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	unsigned char	*char_found;
 	unsigned char	char_to_find;
+	int				i;
 
-	str = (unsigned char *)s;
-	char_found = NULL;
+	i = 0;
+	str = (void *)s;
 	char_to_find = (unsigned char)c;
-	while (str && n > 0)
+	while (n > 0)
 	{
-		if (*str != char_to_find)
+		if (str[i] != char_to_find)
 		{
-			str++;
+			i++;
 		}
 		else
 		{
-			char_found = str;
-			break ;
+			return (&str[i]);
 		}
 		n--;
 	}
-	return (char_found);
+	return (NULL);
 }
 /*int main()
 {

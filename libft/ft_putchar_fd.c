@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:45:04 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/04 17:45:07 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/09 20:59:39 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (fd < 0)
+		return ;
 	write (fd, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:58:14 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/04 17:44:19 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:27:10 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	nsrc = (char *)src;
 	ndest = (char *)dest;
+	if (n == 0 || dest == src)
+		return (dest);
 	i = 0;
 	while (i < n)
 	{

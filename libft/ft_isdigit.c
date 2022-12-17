@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:32:32 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/03 15:32:34 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:38:16 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char	v;
-
-	v = (unsigned char)c;
-	if (v >= '0' && v <= '9')
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);

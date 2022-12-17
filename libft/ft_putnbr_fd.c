@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:45:16 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/04 17:45:17 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/09 21:04:58 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,17 @@ void	ft_putnbr_fd(int n, int fd)
 	int		a[10];
 	long	nbr;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = fd;
 	nbr = n;
 	if (nbr < 0)
 	{
-		ft_putchar('-', j);
+		ft_putchar('-', fd);
 		nbr = -nbr;
 	}
 	if (nbr == 0)
 	{
-		ft_putchar(nbr + '0', j);
+		ft_putchar(nbr + '0', fd);
 		return ;
 	}
 	while (nbr > 0)
@@ -58,7 +56,7 @@ void	ft_putnbr_fd(int n, int fd)
 		nbr = nbr / 10;
 		i++;
 	}
-	ft_rev(a, i, j);
+	ft_rev(a, i, fd);
 }
 /*int main(void)
 {

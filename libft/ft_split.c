@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 17:45:28 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/04 17:45:30 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:12:40 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	split[num_of_strings] = NULL;
 	split = creat_splits(s, split, c);
-	if (creat_splits(s, split, c) == NULL)
+	if (split == NULL)
 	{
 		flip = split;
 		while (*flip)
@@ -135,31 +135,33 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
-/*int	main(void)
-{
-	char s[] = "  To  be  or  not  to  be  j  that   is  the  question  ";
-  	char **split_strings = ft_split(s, ' ');
-	for (int i = 0; i < 11; i++)
-		printf("%s\n", split_strings[i]);
-	printf("***************************\n");
-
-	char s2[] = "Hello there";
-  	char **split_strings2 = ft_split(s2, ' ');
-	for (int i = 0; i < 2; i++)
-		printf("%s\n", split_strings2[i]);
-	printf("***************************\n");
-	
-	char s3[] = ",,, ,,Hello,there,you,,, ,";
-  	char **split_strings3 = ft_split(s3, ',');
-	for (int i = 0; i < 5; i++)
-		printf("%s\n", split_strings3[i]);
-	printf("***************************\n");
-
-	char s4[] = "   b  Hello there you   b ";
-  	char **split_strings4 = ft_split(s4, ' ');
-	for (int i = 0; i < 5; i++)
-		printf("%s\n", split_strings4[i]);
-	printf("***************************\n");
-
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char s[] = "";
+//   	char **split_strings = ft_split(s, 'a');
+// 	for (int i = 0; i < 11; i++)
+// 	{
+// 		printf("%s\n", split_strings[i]);
+// 	}
+// 	printf("***************************\n");
+// 	// char s[] = "  To  be  or  not  to  be  j  that   is  the  question  ";
+//   	// char **split_strings = ft_split(s, ' ');
+// 	// for (int i = 0; i < 11; i++)
+// 	// 	printf("%s\n", split_strings[i]);
+// 	// printf("***************************\n");
+// 	// char s2[] = "Hello there";
+//   	// char **split_strings2 = ft_split(s2, ' ');
+// 	// for (int i = 0; i < 2; i++)
+// 	// 	printf("%s\n", split_strings2[i]);
+// 	// printf("***************************\n");
+// 	// char s3[] = ",,, ,,Hello,there,you,,, ,";
+//   	// char **split_strings3 = ft_split(s3, ',');
+// 	// for (int i = 0; i < 5; i++)
+// 	// 	printf("%s\n", split_strings3[i]);
+// 	// printf("***************************\n");
+// 	// char s4[] = "   b  Hello there you   b ";
+//   	// char **split_strings4 = ft_split(s4, ' ');
+// 	// for (int i = 0; i < 5; i++)
+// 	// 	printf("%s\n", split_strings4[i]);
+// 	return (0);
+// }

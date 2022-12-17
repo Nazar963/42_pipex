@@ -6,7 +6,7 @@
 /*   By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:32:14 by naal-jen          #+#    #+#             */
-/*   Updated: 2022/08/03 15:32:16 by naal-jen         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:36:50 by naal-jen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char	v;
-
-	v = (unsigned char)c;
-	if ((v >= 'a' && v <= 'z') || (v >= 'A' && v <= 'Z'))
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 		return (1);
 	else
 		return (0);

@@ -6,7 +6,7 @@
 #    By: naal-jen <naal-jen@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 18:12:50 by naal-jen          #+#    #+#              #
-#    Updated: 2022/10/21 21:20:16 by naal-jen         ###   ########.fr        #
+#    Updated: 2022/12/16 17:25:21 by naal-jen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(OFILES): $(CFILES)
 	$(CC) $(CFLAGS) $(CFILES)
 
 clean:
-	rm *.o
+	rm -f $(OFILES)
 
 fclean: clean
 	rm pipex; \
