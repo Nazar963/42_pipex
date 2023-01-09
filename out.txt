@@ -1,13 +1,5 @@
-Makefile
-README.md
-handle_error.c
-handle_error_bonus.c
-libft
-out.txt
-pipex.c
-pipex.h
-pipex_bonus.c
-pipex_bonus.h
-test.txt
-utils.c
-utils_bonus.c
+19
+19
+19
+     19      19     236
+      0       0       0
