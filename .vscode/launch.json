@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["new_test.txt", "cat", "hostname", "result.txt"],
+            "args": ["test.txt", "ls", "ls -a", "wc -l", "out.txt"],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "C/C++: gcc build active file",
             "setupCommands": [
